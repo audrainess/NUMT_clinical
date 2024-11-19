@@ -1,98 +1,110 @@
-NUMT Overlap Analysis Tool
+# NUMT Overlap Analysis Tool
+
 A Python tool for analyzing overlaps between Nuclear Mitochondrial DNA Segments (NUMTs) and specific regions of interest in the mitochondrial genome.
-Background
+
+## Background
+
 Nuclear mitochondrial DNA segments (NUMTs) are fragments of mitochondrial DNA that have been inserted into the nuclear genome during evolution. These insertions can complicate the interpretation of mitochondrial DNA sequences, particularly in clinical settings. This tool helps identify potential NUMT interference in regions of interest.
-Features
 
-Identifies complete and partial NUMT overlaps with a query region
-Calculates detailed overlap statistics, including:
+## Features
 
-Exact overlap coordinates
-Overlap length
-Percentage of query region covered
-Type of overlap (Complete, Partial Left, Partial Right, Internal)
+- Identifies complete and partial NUMT overlaps with a query region
+- Calculates detailed overlap statistics, including:
+  - Exact overlap coordinates
+  - Overlap length
+  - Percentage of query region covered
+  - Type of overlap (Complete, Partial Left, Partial Right, Internal)
+- Generates visualizations of overlapping regions
+- Exports detailed results to Excel format
+- Produces publication-ready figures
 
+## Example Output
 
-Generates visualizations of overlapping regions
-Exports detailed results to Excel format
-Produces publication-ready figures
-
-Example Output
-Visualization
+### Visualization
 The tool generates a clear visualization of NUMT overlaps:
-Show Image
-Color coding in the visualization:
 
-Black line: Query region (chrMT:10,761-12,137)
-Green: Complete overlaps
-Blue: Partial left overlaps
-Red: Partial right overlaps
-Purple: Internal overlaps
+![NUMT Overlap Visualization](Figure_1.png)
 
-Excel Output
-Detailed results are exported to an Excel file containing overlap statistics:
-Example from NUMT_overlap_results.xlsx:
+### Color Coding
+- Black line: Query region (chrMT:10,761-12,137)
+- Green: Complete overlaps
+- Blue: Partial left overlaps
+- Red: Partial right overlaps
+- Purple: Internal overlaps
 
-NumtS Code
-Overlap coordinates
-Overlap length and percentage
-Overlap type classification
+### Excel Output
+Detailed results are exported to an Excel file (`NUMT_overlap_results.xlsx`) containing:
+- NumtS Code
+- Overlap coordinates
+- Overlap length and percentage
+- Overlap type classification
 
-Installation
+## Installation
 
-Clone this repository:
-
-bashCopygit clone https://github.com/audrainess/NUMT_clinical.git
+1. Clone this repository:
+```bash
+git clone https://github.com/audrainess/NUMT_clinical.git
 cd NUMT_clinical
+```
 
-Install required packages:
+2. Install required packages:
+```bash
+pip install -r requirements.txt
+```
 
-bashCopypip install -r requirements.txt
-Usage
-Basic Usage
-bashCopypython numt_overlap_analysis.py
+## Usage
+
+### Basic Usage
+```bash
+python numt_overlap_analysis.py
+```
+
 The script will analyze overlaps between NUMTs and the default region (chrMT:10,761-12,137).
-Output Files
+
+### Output Files
 The tool generates:
+1. An Excel file (`NUMT_overlap_results.xlsx`) containing:
+   - Detailed overlap information for each NUMT
+   - Overlap coordinates and lengths
+   - Overlap types and percentages
 
-An Excel file (NUMT_overlap_results.xlsx) containing:
+2. A visualization (`Figure_1.png`) showing:
+   - Query region
+   - Overlapping NUMTs
+   - Color-coded overlap types
 
-Detailed overlap information for each NUMT
-Overlap coordinates and lengths
-Overlap types and percentages
+## Input Data Format
 
-
-A visualization (Figure_1.png) showing:
-
-Query region
-Overlapping NUMTs
-Color-coded overlap types
-
-
-
-Input Data Format
 The tool expects an Excel file with the following columns:
+- NumtS Code: Unique identifier for each NUMT
+- Chr: Chromosome number
+- Mt Start: Mitochondrial start position
+- Mt End: Mitochondrial end position
+- Mt fragment length: Length of the mitochondrial fragment
+- Nuc Start: Nuclear genome start position
+- Nuc End: Nuclear genome end position
+- Chr fragment length: Length of the chromosomal fragment
 
-NumtS Code: Unique identifier for each NUMT
-Chr: Chromosome number
-Mt Start: Mitochondrial start position
-Mt End: Mitochondrial end position
-Mt fragment length: Length of the mitochondrial fragment
-Nuc Start: Nuclear genome start position
-Nuc End: Nuclear genome end position
-Chr fragment length: Length of the chromosomal fragment
+## Clinical Usage Disclaimer
 
-Clinical Usage Disclaimer
-⚠️ Important Notice for Clinical Applications:
+⚠️ **Important Notice for Clinical Applications**:
+- This tool is provided for research purposes only
+- Results should be validated using appropriate clinical methods
+- Not intended for direct clinical diagnosis
+- Users should follow their institution's guidelines for clinical sequence analysis
+- Always validate findings using alternative methods for clinical applications
 
-This tool is provided for research purposes only
-Results should be validated using appropriate clinical methods
-Not intended for direct clinical diagnosis
-Users should follow their institution's guidelines for clinical sequence analysis
-Always validate findings using alternative methods for clinical applications
+## Contributing
 
-Contributing
 Contributions are welcome! Please feel free to submit a Pull Request.
-Citation
+
+## Citation
+
 If you use this tool in your research, please cite:
-CopyRepository: https://github.com/audrainess/NUMT_clinical
+```
+Repository: https://github.com/audrainess/NUMT_clinical
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
