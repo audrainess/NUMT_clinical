@@ -1,10 +1,12 @@
 # NUMT Overlap Analysis Tool
 
-A Python tool for analyzing overlaps between Nuclear Mitochondrial DNA Segments (NUMTs) and specific regions of interest in the mitochondrial genome.
+A Python tool for analyzing overlaps between Nuclear Mitochondrial DNA Segments (NUMTs) and specific regions of interest in the mitochondrial and nuclear genomes.
 
 ## Background
 
-Nuclear mitochondrial DNA segments (NUMTs) are fragments of mitochondrial DNA that have been inserted into the nuclear genome during evolution. These insertions can complicate the interpretation of mitochondrial DNA sequences, particularly in clinical settings. This tool helps identify potential NUMT interference in regions of interest.
+Nuclear mitochondrial DNA segments (NUMTs) are fragments of mitochondrial DNA that have been inserted into the nuclear genome during evolution. These insertions can complicate the interpretation of mitochondrial DNA sequences, particularly in clinical settings. This tool helps identify potential NUMT interference in regions of interest. The list of NUMTs is derived from RHNumtS (Reference Human NumtS) compilation annotating more than 500 Human NumtS: 
+
+Lascaro, D., Castellana, S., Gasparre, G. et al. The RHNumtS compilation: Features and bioinformatics approaches to locate and quantify Human NumtS. BMC Genomics 9, 267 (2008). https://doi.org/10.1186/1471-2164-9-267
 
 ## Features
 
