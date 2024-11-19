@@ -109,9 +109,14 @@ def visualize_overlaps(overlapping_df, query_start=10761, query_end=12137):
     return fig
 
 def main():
-    # Set working directory and file paths
-    os.chdir('/Users/audraniness/NUMT_clinical')
-    file_path = "12864_2007_1460_MOESM1_ESM.xls"
+    # Use relative paths
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    data_dir = os.path.join(script_dir, 'data')
+    file_path = os.path.join(data_dir, '12864_2007_1460_MOESM1_ESM.xls')
+    
+    # Create output directory if it doesn't exist
+    output_dir = os.path.join(script_dir, 'output')
+    os.makedirs(output_dir, exist_ok=True)
     
     # Define query region
     query_start = 10761
@@ -139,12 +144,17 @@ def main():
         
         # Create visualization
         fig = visualize_overlaps(overlapping_numts, query_start, query_end)
-        plt.show()
         
-        # Save results to a file
-        output_file = "NUMT_overlap_results.xlsx"
+        # Save plot
+        plot_path = os.path.join(output_dir, 'NUMT_overlap_visualization.png')
+        plt.savefig(plot_path, bbox_inches='tight', dpi=300)
+        plt.close()
+        
+        # Save results to Excel
+        output_file = os.path.join(output_dir, 'NUMT_overlap_results.xlsx')
         overlapping_numts.to_excel(output_file, index=False)
         print(f"\nResults have been saved to {output_file}")
+        print(f"Plot has been saved to {plot_path}")
 
 if __name__ == "__main__":
     main()
